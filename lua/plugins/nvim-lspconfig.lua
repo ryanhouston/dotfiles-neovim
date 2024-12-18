@@ -5,6 +5,16 @@ return {
       servers = {
         pylsp = {
           settings = {
+            java = {
+              configuration = {
+                runtimes = {
+                  {
+                    name = "JavaSE-11",
+                    path = "~/.jenv/shims/java",
+                  },
+                },
+              },
+            },
             pylsp = {
               plugins = {
                 autopep8 = { enabled = false },
