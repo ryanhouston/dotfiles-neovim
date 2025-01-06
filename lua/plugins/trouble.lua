@@ -1,5 +1,5 @@
 return {
-  " folke/trouble.nvim",
+  "folke/trouble.nvim",
   opts = {
     modes = {
       symbols = {
