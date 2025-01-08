@@ -58,6 +58,9 @@ return {
       substitutions = {},
     },
 
+    -- Disable ui to prefer render-markdown.nvim
+    ui = { enable = false },
+
     ---@param url string
     follow_url_func = function(url)
       -- Open the URL in the default web browser.
