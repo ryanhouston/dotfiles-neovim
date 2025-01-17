@@ -67,4 +67,12 @@ return {
       vim.ui.open(url) -- need Neovim 0.10.0+
     end,
   },
+  keys = {
+    { "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Obsidian Backlinks" },
+    { "<leader>oll", "<cmd>ObsidianLink<CR>", desc = "Obsidian Link" },
+    { "<leader>oln", "<cmd>ObsidianLinkNew<CR>", desc = "Obsidian Link New" },
+    { "<leader>on", "<cmd>ObsidianNew<CR>", desc = "Obsidian New Note" },
+    { "<leader>or", "<cmd>ObsidianRename<CR>", desc = "Obsidian Rename" },
+    { "<leader>ot", "<cmd>ObsidianTags<CR>", desc = "Obsidian Matching Tags" },
+  },
 }
