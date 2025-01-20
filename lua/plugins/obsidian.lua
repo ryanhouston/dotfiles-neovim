@@ -69,10 +69,10 @@ return {
   },
   keys = {
     { "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Obsidian Backlinks" },
-    { "<leader>oll", "<cmd>ObsidianLink<CR>", desc = "Obsidian Link" },
+    { "<leader>oll", "<cmd>ObsidianLink<CR>", desc = "Obsidian Link", mode = { "n", "v" } },
     { "<leader>oln", "<cmd>ObsidianLinkNew<CR>", desc = "Obsidian Link New" },
     { "<leader>on", "<cmd>ObsidianNew<CR>", desc = "Obsidian New Note" },
     { "<leader>or", "<cmd>ObsidianRename<CR>", desc = "Obsidian Rename" },
-    { "<leader>ot", "<cmd>ObsidianTags<CR>", desc = "Obsidian Matching Tags" },
+    { "<leader>ot", "<cmd>ObsidianTags<CR>", desc = "Obsidian Matching Tags", mode = { "n", "v" } },
   },
 }
