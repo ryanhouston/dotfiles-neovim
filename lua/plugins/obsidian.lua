@@ -19,11 +19,11 @@ return {
     workspaces = {
       {
         name = "compass",
-        path = "~/Documents/Wiki/Compass",
+        path = "~/Documents/Wiki/CompassPKM",
       },
       {
         name = "personal",
-        path = "~/Dropbox/Wiki/personal",
+        path = "~/Documents/Wiki/PersonalPKM",
       },
     },
 
