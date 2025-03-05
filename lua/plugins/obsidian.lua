@@ -28,6 +28,7 @@ return {
     },
 
     notes_subdir = "Log",
+    new_notes_location = "notes_subdir",
 
     ---@param title string|?
     ---@return string
@@ -73,7 +74,8 @@ return {
     { "<leader>oln", "<cmd>ObsidianLinkNew<CR>", desc = "Obsidian Link New", mode = { "n", "v" } },
     { "<leader>on", "<cmd>ObsidianNew<CR>", desc = "Obsidian New Note" },
     { "<leader>or", "<cmd>ObsidianRename<CR>", desc = "Obsidian Rename" },
-    { "<leader>os", "<cmd>ObsidianSearch<CR>", desc = "Obsidian Search" },
-    { "<leader>ot", "<cmd>ObsidianTags<CR>", desc = "Obsidian Matching Tags", mode = { "n", "v" } },
+    { "<leader>oss", "<cmd>ObsidianSearch<CR>", desc = "Obsidian Search" },
+    { "<leader>ost", "<cmd>ObsidianTags<CR>", desc = "Obsidian Search Tags", mode = { "n", "v" } },
+    { "<leader>ot", "<cmd>ObsidianTemplates<CR>", desc = "Obsidian Templates", mode = { "n" } },
   },
 }
