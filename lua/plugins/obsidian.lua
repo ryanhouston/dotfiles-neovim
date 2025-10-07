@@ -76,6 +76,6 @@ return {
     { "<leader>or", "<cmd>ObsidianRename<CR>", desc = "Obsidian Rename" },
     { "<leader>oss", "<cmd>ObsidianSearch<CR>", desc = "Obsidian Search" },
     { "<leader>ost", "<cmd>ObsidianTags<CR>", desc = "Obsidian Search Tags", mode = { "n", "v" } },
-    { "<leader>ot", "<cmd>ObsidianTemplates<CR>", desc = "Obsidian Templates", mode = { "n" } },
+    { "<leader>ot", "<cmd>ObsidianTemplate<CR>", desc = "Obsidian Templates", mode = { "n" } },
   },
 }
