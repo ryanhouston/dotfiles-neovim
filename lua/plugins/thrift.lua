@@ -1,4 +1,4 @@
 return {
   -- add thrift syntax
-  { "solarnz/thrift.vim" },
+  { "nvim-treesitter", opts = { ensure_installed = { "thrift" } } },
 }
