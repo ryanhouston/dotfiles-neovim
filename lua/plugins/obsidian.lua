@@ -61,12 +61,6 @@ return {
 
     -- Disable ui to prefer render-markdown.nvim
     ui = { enable = false },
-
-    ---@param url string
-    follow_url_func = function(url)
-      -- Open the URL in the default web browser.
-      vim.ui.open(url) -- need Neovim 0.10.0+
-    end,
   },
   keys = {
     { "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Obsidian Backlinks" },
