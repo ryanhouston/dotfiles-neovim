@@ -4,24 +4,7 @@ return {
     opts = {
       servers = {
         pyright = {},
-        -- pylsp = {
-        --   settings = {
-        --     pylsp = {
-        --       plugins = {
-        --         autopep8 = { enabled = false },
-        --         mccabe = { enabled = false },
-        --         pycodestyle = {
-        --           enabled = true,
-        --           maxLineLength = 100,
-        --         },
-        --         pydocstyle = { enabled = true },
-        --         pyflakes = { enabled = true },
-        --         pylint = { enabled = false },
-        --         yapf = { enabled = false },
-        --       },
-        --     },
-        --   },
-        -- },
+        copilot = nil,
         jdtls = {
           -- Custom setup function to handle Bazel workspace
           setup = function()
