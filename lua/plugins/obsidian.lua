@@ -61,15 +61,19 @@ return {
 
     -- Disable ui to prefer render-markdown.nvim
     ui = { enable = false },
+
+    -- Disable legacy_commands which will be removed in the future
+    -- i.e. `ObsidianBacklinks`` should be replaced with `Obsidian backlinks`
+    legacy_commands = false,
   },
   keys = {
-    { "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Obsidian Backlinks" },
-    { "<leader>oll", "<cmd>ObsidianLink<CR>", desc = "Obsidian Link", mode = { "n", "v" } },
-    { "<leader>oln", "<cmd>ObsidianLinkNew<CR>", desc = "Obsidian Link New", mode = { "n", "v" } },
-    { "<leader>on", "<cmd>ObsidianNew<CR>", desc = "Obsidian New Note" },
-    { "<leader>or", "<cmd>ObsidianRename<CR>", desc = "Obsidian Rename" },
-    { "<leader>oss", "<cmd>ObsidianSearch<CR>", desc = "Obsidian Search" },
-    { "<leader>ost", "<cmd>ObsidianTags<CR>", desc = "Obsidian Search Tags", mode = { "n", "v" } },
-    { "<leader>ot", "<cmd>ObsidianTemplate<CR>", desc = "Obsidian Templates", mode = { "n" } },
+    { "<leader>ob", "<cmd>Obsidian backlinks<CR>", desc = "Obsidian Backlinks" },
+    { "<leader>oll", "<cmd>Obsidian link<CR>", desc = "Obsidian Link", mode = { "n", "v" } },
+    { "<leader>oln", "<cmd>Obsidian link new<CR>", desc = "Obsidian Link New", mode = { "n", "v" } },
+    { "<leader>on", "<cmd>Obsidian new<CR>", desc = "Obsidian New Note" },
+    { "<leader>or", "<cmd>Obsidian rename<CR>", desc = "Obsidian Rename" },
+    { "<leader>oss", "<cmd>Obsidian search<CR>", desc = "Obsidian Search" },
+    { "<leader>ost", "<cmd>Obsidian tags<CR>", desc = "Obsidian Search Tags", mode = { "n", "v" } },
+    { "<leader>ot", "<cmd>Obsidian template<CR>", desc = "Obsidian Templates", mode = { "n" } },
   },
 }
