@@ -10,3 +10,6 @@ vim.g.mapleader = ","
 
 -- Set colorcolumn to indicate normal max line lengths
 vim.opt.colorcolumn = "80,120"
+
+-- Disable automatic clipboard sync with system
+vim.opt.clipboard = ""
