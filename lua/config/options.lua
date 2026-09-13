@@ -12,4 +12,4 @@ vim.g.mapleader = ","
 vim.opt.colorcolumn = "80,120"
 
 -- Disable automatic clipboard sync with system
-vim.opt.clipboard = ""
+vim.opt.clipboard = "unnamed"
