@@ -27,6 +27,9 @@ return {
       },
     },
 
+    note = {
+      template = "zettel-new.md",
+    },
     notes_subdir = "Log",
     new_notes_location = "notes_subdir",
 
@@ -49,7 +52,10 @@ return {
       return tostring(os.date("%Y%m%d-%H%M%S", os.time())) .. "-" .. suffix
     end,
 
-    preferred_link_style = "markdown",
+    link = {
+      style = "markdown",
+      format = "absolute",
+    },
 
     templates = {
       folder = "_templates",
