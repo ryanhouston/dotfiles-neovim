@@ -9,11 +9,38 @@ for agents working on this codebase.
 ~/.config/nvim/
 ├── init.lua              # Entry point - bootstraps lazy.nvim
 ├── lua/
-│   ├── config/           # Core config: lazy, options, keymaps, autocmds
-│   └── plugins/          # Plugin specs: conform, treesitter, lspconfig, etc.
+│   ├── config/           # Core config: lazy, options, keymaps, autocmds, profile
+│   ├── plugins/          # Shared plugin specs: conform, lspconfig, etc.
+│   └── profiles/         # Machine-specific specs, one dir per profile
+│       └── <name>/
+│           ├── init.lua          # Optional early setup hook
+│           ├── extras.lua        # Optional profile-only LazyVim extras
+│           └── plugins/          # Plugin specs only loaded for this profile
 ├── stylua.toml           # Lua formatter config (2 spaces, 120 col)
-└── lazyvim.json          # LazyVim extras manifest
+└── lazyvim.json          # LazyVim extras manifest (shared across machines)
 ```
+
+## Machine Profiles
+
+This config is shared between machines (personal + work), so anything that only
+makes sense in one environment belongs in a profile, not in `lua/plugins/`.
+
+- The active profile is resolved by `lua/config/profile.lua`, in order:
+  `$NVIM_PROFILE` env var → `profile.local` (gitignored, one line) → hostname
+  map in that file → `personal`.
+- `lua/config/lazy.lua` imports `profiles.<name>.extras` (before `plugins`, so
+  lazy.nvim's import-order check stays valid) and `profiles.<name>.plugins`,
+  skipping either if the profile doesn't define it.
+- `init.lua` calls `profiles.<name>.setup()` (if present) before lazy starts,
+  for early `vim.env`/option tweaks.
+- To add a profile-specific plugin override, extend the shared spec, e.g.
+  `opts = function(_, opts) table.insert(opts.workspaces, ...) end`, so shared
+  config still applies.
+- `lazyvim.json` extras are global. To make an extra load in only one profile,
+  remove it from `lazyvim.json` and import it in `profiles/<name>/extras.lua`
+  (e.g. `lang.java` is work-only). Setting `enabled = false` on an extra that
+  `lazyvim.json` already enables does **not** work — lazy.nvim dedups by module
+  name, so the first import wins.
 
 ## Build/Lint/Test Commands
 

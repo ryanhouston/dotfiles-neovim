@@ -14,12 +14,30 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local profile = require("config.profile").name
+
+local config_dir = vim.fn.stdpath("config")
+---@param path string
+local function config_exists(path)
+  return (vim.uv or vim.loop).fs_stat(config_dir .. path) ~= nil
+end
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- profile-specific LazyVim extras, before `plugins` to keep import order valid
+    {
+      import = "profiles." .. profile .. ".extras",
+      cond = config_exists("/lua/profiles/" .. profile .. "/extras.lua"),
+    },
     -- import/override with your plugins
     { import = "plugins" },
+    -- profile-specific plugin specs
+    {
+      import = "profiles." .. profile .. ".plugins",
+      cond = config_exists("/lua/profiles/" .. profile .. "/plugins"),
+    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

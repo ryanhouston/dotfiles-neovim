@@ -18,10 +18,6 @@ return {
   opts = {
     workspaces = {
       {
-        name = "compass",
-        path = "~/Documents/Wiki/CompassPKM",
-      },
-      {
         name = "personal",
         path = "~/Documents/Wiki/PersonalPKM",
       },
