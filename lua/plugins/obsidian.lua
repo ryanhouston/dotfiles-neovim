@@ -75,7 +75,7 @@ return {
   keys = {
     { "<leader>ob", "<cmd>Obsidian backlinks<CR>", desc = "Obsidian Backlinks" },
     { "<leader>oll", "<cmd>Obsidian link<CR>", desc = "Obsidian Link", mode = { "n", "v" } },
-    { "<leader>oln", "<cmd>Obsidian link new<CR>", desc = "Obsidian Link New", mode = { "n", "v" } },
+    { "<leader>oln", "<cmd>Obsidian link_new<CR>", desc = "Obsidian Link New", mode = "v" },
     { "<leader>on", "<cmd>Obsidian new<CR>", desc = "Obsidian New Note" },
     { "<leader>or", "<cmd>Obsidian rename<CR>", desc = "Obsidian Rename" },
     { "<leader>oss", "<cmd>Obsidian search<CR>", desc = "Obsidian Search" },
